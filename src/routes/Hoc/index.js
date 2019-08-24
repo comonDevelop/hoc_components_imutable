@@ -7,18 +7,26 @@
  */
 import React from 'react';
 import GetHocComponent from './WrapedComponent';
+import {Button} from 'antd';
+import Footer from './Footer';
 
 class Hoc extends React.Component{
     constructor(props){
         super(props);
-        this.state = {}
+        this.state = {
+            _type: true,
+        }
         console.log(this.props, '-----props------')
     }
+
     render() {
+        console.log("这是父组件状态。")
         return (
-            <>
-                1234656
-            </>
+            <div style={{paddingTop: '60px',textAlign: "center"}}>
+                <Button type="primary" onClick={() => this.props.handleClickBtn("btnClick")}>点击</Button>
+                <div onClick={() => this.setState({_type: !this.state._type})}>{!this.state._type? '这是正常状态':'这是点击之后的状态'}</div>
+                <Footer />
+            </div>
         )
     }
 }
