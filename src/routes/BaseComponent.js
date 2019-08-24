@@ -1,12 +1,18 @@
-
+/** 作者: ludan
+ *  时间: 2019-08-24 11:34:40
+ *  修改者:  ludan
+ *  最后修改人: 2019-08-24 11:34:40 
+ *  开发模块：imutable 优化
+ *  说明： React 当中最优化方法使用 imutable 进行处理
+ */
 import React from 'react';
 import { is } from 'immutable';
 
  export default class BaseComponent extends React.Component{
-    constructor(props) {
-        super(props);
+    constructor(props){
+        super(props)
+        this.state = {}
     }
-
     shouldComponentUpdate(nextProps, nextState) {
         const thisProps = this.props || {};
         const thisState = this.state || {};
