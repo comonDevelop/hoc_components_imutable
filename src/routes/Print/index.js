@@ -90,6 +90,8 @@ const Example = () => {
             <ReactToPrint
                 trigger={() => <Button type="primary">打印</Button>}
                 content={() => componentRef.current}
+                removeAfterPrint={true}
+                pageStyle={{marginTop:'50px'}}
             />
             <ComponentToPrint ref={componentRef} />
         </div>
