@@ -4,6 +4,7 @@ import IndexPage from './routes/IndexPage';
 import Hoc from './routes/Hoc/index';
 import ReactHooks from './routes/ReactHooks/index';
 import ReactPrint from './routes/Print';
+import {CodeSegmentation} from './routes/ReactFunction';
 
 function RouterConfig({ history }) {
   return (
@@ -13,6 +14,7 @@ function RouterConfig({ history }) {
         <Route path="/hoc" exact component={Hoc} />
         <Route path="/ReactHooks" exact component={ReactHooks} />
         <Route path="/ReactPrint" exact component={ReactPrint} />
+        <Route path="/CodeSegmentation" exact component={CodeSegmentation} />
       </Switch>
     </Router>
   );
