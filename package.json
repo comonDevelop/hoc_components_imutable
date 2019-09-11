@@ -10,8 +10,8 @@
     "antd": "^3.22.0",
     "babel-plugin-import": "^1.12.0",
     "dva": "^2.4.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-to-print": "^2.4.0"
   },
   "devDependencies": {

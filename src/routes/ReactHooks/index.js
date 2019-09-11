@@ -8,27 +8,41 @@
  * 由于业务变动，函数组件不得不改为类组件。
  * 这时候，Hooks就派上用场了。 Hooks 允许我们将组件内部的逻辑，组织成为一个可复用的隔离模块。
  **/
-import React from 'react';
+import React, {useState} from 'react';
 import {Button} from 'antd';
 
-class ReactHooks extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            count: 0,
-        };
-    }
-    render() {
-        return (
-            <div style={{textAlign:'center', marginTop: '60px'}}>
-                <p>这是Hooks页面</p>
-                <Button type="primary" onClick={() => {
-                    this.setState({count: this.state.count+1 })
-                }}>点击</Button>  
-                <p>这是点击之后的数据展示：{`${this.state.count}`}</p>
-            </div>
-        )
-    }
+// class ReactHooks extends React.Component{
+//     constructor(props){
+//         super(props);
+//         this.state={
+//             count: 0,
+//         };
+//     }
+//     render() {
+//         return (
+//             <div style={{textAlign:'center', marginTop: '60px'}}>
+//                 <p>这是Hooks页面</p>
+//                 <Button type="primary" onClick={() => {
+//                     this.setState({count: this.state.count+1 })
+//                 }}>点击</Button>  
+//                 <p>这是点击之后的数据展示：{`${this.state.count}`}</p>
+//             </div>
+//         )
+//     }
+// }
+
+// 使用 useState 方式初始化
+function ReactHooks() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <Button  type="primary" onClick={() => setCount(count + 1)}>
+                Click me
+            </Button>
+        </div>
+    );
 }
 
 export default ReactHooks;
