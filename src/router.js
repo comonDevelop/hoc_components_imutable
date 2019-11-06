@@ -6,6 +6,7 @@ import Video from './routes/Video/index';
 import Hoc from './routes/Hoc/index';
 import ReactHooks from './routes/ReactHooks/index';
 import ReactPrint from './routes/Print';
+import ChildrenComp from './routes/Hoc/ChildrenComp';
 
 function RouterConfig({ history }) {
   return (
@@ -17,6 +18,7 @@ function RouterConfig({ history }) {
         <Route path="/hoc" exact component={Hoc} />
         <Route path="/ReactHooks" exact component={ReactHooks} />
         <Route path="/ReactPrint" exact component={ReactPrint} />
+        <Route path="/childrenComp" exact component={ChildrenComp} />
       </Switch>
     </Router>
   );

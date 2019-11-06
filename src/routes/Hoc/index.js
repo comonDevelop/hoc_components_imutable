@@ -9,6 +9,8 @@ import React from 'react';
 import GetHocComponent from './WrapedComponent';
 import {Button} from 'antd';
 import Footer from './Footer';
+import { Router, Route, Switch, Link } from 'dva/router';
+import ChildrenComp from './ChildrenComp';
 
 class Hoc extends React.Component{
     constructor(props){
@@ -25,6 +27,9 @@ class Hoc extends React.Component{
             <div style={{paddingTop: '60px',textAlign: "center"}}>
                 <Button type="primary" onClick={() => this.props.handleClickBtn("btnClick")}>点击</Button>
                 <div onClick={() => this.setState({_type: !this.state._type})}>{!this.state._type? '这是正常状态':'这是点击之后的状态'}</div>
+                <Link to='/childrenComp'> 
+                    <Button>点击跳转到二级目录</Button>
+                </Link> 
                 <Footer />
             </div>
         )
