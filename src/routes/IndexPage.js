@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './IndexPage.css';
-import { is } from 'immutable';
+// import styles from './IndexPage.css';
+// import { is } from 'immutable';
 import {Button} from 'antd';
 import BaseComponent from './BaseComponent';
 // function IndexPage() {

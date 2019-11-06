@@ -1,8 +1,18 @@
 import dva from 'dva';
+import {message} from 'antd';
 import './index.css';
-
+// const createBrowserHistory = require("history").createBrowserHistory;
 // 1. Initialize
-const app = dva();
+const app = dva({
+        // history: createBrowserHistory(),
+        onError (error) {
+            if(error.success){
+                message.error(error.RET_MSG)
+            }else{
+                message.error(error.message)
+            }
+        },
+    });
 
 // 2. Plugins
 // app.use({});

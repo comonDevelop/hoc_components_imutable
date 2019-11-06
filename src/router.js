@@ -3,6 +3,9 @@ import { Router, Route, Switch } from 'dva/router';
 import IndexPage from './routes/IndexPage';
 import Hooks from './routes/Hooks';
 import Video from './routes/Video/index';
+import Hoc from './routes/Hoc/index';
+import ReactHooks from './routes/ReactHooks/index';
+import ReactPrint from './routes/Print';
 
 function RouterConfig({ history }) {
   return (
@@ -11,6 +14,9 @@ function RouterConfig({ history }) {
         <Route path="/" exact component={IndexPage} />
         <Route path="/hooks" exact component={Hooks} />
         <Route path="/video" exact component={Video} />
+        <Route path="/hoc" exact component={Hoc} />
+        <Route path="/ReactHooks" exact component={ReactHooks} />
+        <Route path="/ReactPrint" exact component={ReactPrint} />
       </Switch>
     </Router>
   );
