@@ -8,6 +8,7 @@ import ReactHooks from './routes/ReactHooks/index';
 import ReactPrint from './routes/Print';
 import ChildrenComp from './routes/Hoc/ChildrenComp';
 import Es6 from './routes/Es6';
+import AntdForm from './routes/AntdForm';
 
 function RouterConfig({ history }) {
   return (
@@ -21,6 +22,7 @@ function RouterConfig({ history }) {
         <Route path="/ReactPrint" exact component={ReactPrint} />
         <Route path="/childrenComp" exact component={ChildrenComp} />
         <Route path="/es6" exact component={Es6} />
+        <Route path="/antdForm" exact component={AntdForm} />
       </Switch>
     </Router>
   );
