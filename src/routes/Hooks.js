@@ -1,14 +1,29 @@
 import React, {
     useState, 
     useEffect, 
-    useReducer
+    useReducer, 
+    useContext,
 } from "react";
 import { Input, Button } from 'antd'
 
 const Hooks = () => {
     const [count, setCount] = useState(0);
     const [fruits, setFruits] = useState(['banana', 'Apple'])
-    const [fruit, setFruit] = useState("")
+    const [fruit, setFruit] = useState("");
+
+    // 依赖执行一次
+    useEffect(() => {
+        console.log("状态执行一次，componentDidMount")
+    }, [])
+    // 依赖执行多次
+    useEffect(() => {
+        console.log("状态执行多次，shouldComponentUpdate")
+    })
+     // 依赖执行多次
+     useEffect(() => {
+        console.log("状态执行多次,监听状态")
+    }, ["fruits"])
+
     return (
         <div style={{textAlign:'center', marginTop: '60px'}}>
             <p>这是count: {count}</p>
@@ -29,7 +44,7 @@ const Hooks = () => {
                 </div>
             </div>
             <p>---------------------------------------------------------------</p>
-            
+
         </div>
     )
 }
