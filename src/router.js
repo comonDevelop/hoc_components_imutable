@@ -6,6 +6,7 @@ import ReactHooks from './routes/ReactHooks/index';
 import ReactPrint from './routes/Print';
 import {CodeSegmentation} from './routes/ReactFunction';
 import ReactContext from './routes/ReactContext';
+import Auth from './routes/Auth';
 
 function RouterConfig({ history }) {
   return (
@@ -17,6 +18,7 @@ function RouterConfig({ history }) {
         <Route path="/ReactPrint" exact component={ReactPrint} />
         <Route path="/CodeSegmentation" exact component={CodeSegmentation} />
         <Route path="/ReactContext" exact component={ReactContext} />
+        <Route path="/auth" exact component={Auth} />
       </Switch>
     </Router>
   );

@@ -1,21 +1,8 @@
 import React from 'react';
 import { connect } from 'dva';
-// import styles from './IndexPage.css';
-// import { is } from 'immutable';
 import {Button} from 'antd';
 import BaseComponent from './BaseComponent';
-// function IndexPage() {
-//   return (
-//     <div className={styles.normal}>
-//       <h1 className={styles.title}>Yay! Welcome to dva!</h1>
-//       <div className={styles.welcome} />
-//       <ul className={styles.list}>
-//         <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
-//         <li><a href="https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md">Getting Started</a></li>
-//       </ul>
-//     </div>
-//   );
-// }
+import config from "../utils/config";
 
 class TempCompoent extends BaseComponent {
   constructor(props){
@@ -54,10 +41,23 @@ class IndexPage extends BaseComponent {
         <p>{`这是btnType值${this.state.btnType}`}</p>
         <Button type="primary" onClick={() => this.setState({btnType: this.state.btnType})}>点击设置相同state值，页面是否会渲染</Button>
         <TempCompoent />
+        <br/><br/>
+        {/* 第三方认证 https://github.com/login/oauth/authorize */}
+        <div>
+          <a 
+            href={`https://github.com/login/oauth/authorize?client_id=${config.Client_ID}&client_secret=${config.Client_Secret}&scope=user`}
+          >第三方认证</a> 
+        </div>
       </div>
     )
   }
+
+  handleClickOAuthBtn = () => {
+    // https://github.com/login/oauth/authorize
+  }
 }
+
+
 
 
 export default connect()(IndexPage);
