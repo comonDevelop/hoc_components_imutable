@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import ReactToPrint from 'react-to-print';
 import { Table, Divider, Tag, Button } from 'antd'; 
 import "./index.less";
+
 class ComponentToPrint extends React.Component {
     render() {
         const columns = [
@@ -108,83 +109,101 @@ class PrintCanvas extends React.Component{
 
         var canvas=document.querySelector('#cavsElem');
         var ctx=canvas.getContext('2d');
-        canvas.width=455*2;
-        canvas.height=data.length*40+150;
-        canvas.style.border="1px solid #ccc";
+        canvas.width=990;
+        canvas.height=data.length*40+600;
+        canvas.style.border="1px solid #000000";
         var rectH=20;
-        var rectW=65;
+        var rectW=55;
+        var number=28;
         ctx.scale(2,2)
         ctx.lineWidth = 1;
         ctx.strokeStyle = "#ccc";
         ctx.textAlign = "center";    
 
-
-        ctx.fillText("承兑列表", 227, 15)
+        ctx.fillText("电子商业汇票承兑清单", number + rectW * 4, 15)
         ctx.fillStyle= "#000000"
 
+        ctx.fillText("编号：", number + rectW * 6, 35)
+        ctx.fillStyle= "#000000"
+        ctx.fillText("客户号：", 32,  55)
+        ctx.fillStyle= "#000000"
+        ctx.fillText("时间：", 32,  75)
+        ctx.fillStyle= "#000000"
+        ctx.fillText("账号：", 32,  95)
+        ctx.fillStyle= "#000000"
 
-
-        let lineHeight = 35;
+        let lineHeight = 115, _width = number;
         ctx.fillStyle = "#000000";
-        ctx.fillText('序号',32,lineHeight);
-        ctx.fillText('用户',97,lineHeight); 
-        ctx.fillStyle = "#ff0000"; 
-        ctx.fillText('庄',162,lineHeight);
-        ctx.fillStyle = "#006fff"; 
-        ctx.fillText('闲',227,lineHeight);
-        ctx.fillStyle = "#07c160";
-        ctx.fillText('和',292,lineHeight);
-        ctx.fillStyle = "#ff0000";
-        ctx.fillText('庄对',357,lineHeight);
-        ctx.fillStyle = "#006fff";
-        ctx.fillText('闲对',422,lineHeight);
+        ctx.fillText('序号', _width ,lineHeight);
+        ctx.fillText('收款人名称', _width + rectW * 1,lineHeight); 
+        ctx.fillStyle = "#000000"; 
+        ctx.fillText('开户银行',_width + rectW * 2,lineHeight);
+        ctx.fillStyle = "#000000"; 
+        ctx.fillText('账号', _width + rectW * 3,lineHeight);
+        ctx.fillStyle = "#000000";
+        ctx.fillText('汇票号码',_width + rectW * 4,lineHeight);
+        ctx.fillStyle = "#000000";
+        ctx.fillText('汇票金额',_width + rectW * 5,lineHeight);
+        ctx.fillStyle = "#000000";
+        ctx.fillText('出票日期',_width + rectW * 6,lineHeight);
+        ctx.fillStyle = "#000000";
+        ctx.fillText('到期日期',_width + rectW * 7,lineHeight);
+        ctx.fillStyle = "#000000";
+        ctx.fillText('备注',_width + rectW * 8,lineHeight);
 
         for(var i= 0;i<data.length;i++){
-            let _num = 55;
+            let _num = 135, _width = number;
             ctx.fillStyle = "#000000";
-            ctx.fillText(i+1,32,rectH*i+_num); 
-            ctx.fillText(data[i].nickName,97,rectH*i+_num); 
-            ctx.fillStyle = "#ff0000";
-            ctx.fillText(data[i].corpusBanker,162,rectH*i+_num);
-            ctx.fillStyle = "#006fff"; 
-            ctx.fillText(data[i].corpusPlayer,227,rectH*i+_num);
-            ctx.fillStyle = "#07c160";
-            ctx.fillText(data[i].corpusTie,292,rectH*i+_num);
-            ctx.fillStyle = "#ff0000";
-            ctx.fillText(data[i].corpusBP,357,rectH*i+_num);
-            ctx.fillStyle = "#006fff";
-            ctx.fillText(data[i].corpusPP,422,rectH*i+_num);
+            ctx.fillText(i+1, _width,rectH*i+_num); 
+            ctx.fillText(data[i].nickName,_width + rectW * 1,rectH*i+_num); 
+            ctx.fillStyle = "#000000";
+            ctx.fillText(data[i].corpusBanker,_width + rectW * 2,rectH*i+_num);
+            ctx.fillStyle = "#000000"; 
+            ctx.fillText(data[i].corpusPlayer,_width + rectW * 3,rectH*i+_num);
+            ctx.fillStyle = "#000000";
+            ctx.fillText(data[i].corpusTie,_width + rectW * 4,rectH*i+_num);
+            ctx.fillStyle = "#000000";
+            ctx.fillText(data[i].corpusBP,_width + rectW * 5,rectH*i+_num);
+            ctx.fillStyle = "#000000";
+            ctx.fillText(data[i].corpusPP,_width + rectW * 6,rectH*i+_num);
+            ctx.fillStyle = "#000000";
+            ctx.fillText(data[i].corpusPP,_width + rectW * 7,rectH*i+_num);
+            ctx.fillStyle = "#000000";
+            ctx.fillText(data[i].corpusPP,_width + rectW * 8,rectH*i+_num);
             
         }
 
-        let _num1 = 55;
-        ctx.fillStyle = "#000000";
-        ctx.fillText('合计',32,data.length*20+_num1); 
-        ctx.fillText('',97,data.length*20+_num1); 
-        ctx.fillStyle = "#ff0000";
-        ctx.fillText(summaryInfo[0].corpusBanker,162,data.length*20+_num1);
-        ctx.fillStyle = "#006fff"; 
-        ctx.fillText(summaryInfo[0].corpusPlayer,227,data.length*20+_num1);
-        ctx.fillStyle = "#07c160";
-        ctx.fillText(summaryInfo[0].corpusTie,292,data.length*20+_num1);
-        ctx.fillStyle = "#ff0000";
-        ctx.fillText(summaryInfo[0].corpusBP,357,data.length*20+_num1);
-        ctx.fillStyle = "#006fff";
-        ctx.fillText(summaryInfo[0].corpusPP,422,data.length*20+_num1);
-
         for(var i = 0; i<data.length+2; i++){
-            ctx.moveTo(rectW*i,0);
-            ctx.lineTo(rectW*i,canvas.height);
+            ctx.moveTo(rectW*i,100);
+            ctx.lineTo(rectW*i,data.length*20 + 120);
 
-            ctx.moveTo(0,rectH*i);
-            ctx.lineTo(canvas.width,rectH*i);
+            ctx.moveTo(0,rectH*i + 100);
+            ctx.lineTo(canvas.width,rectH*i + 100);
             ctx.stroke();
         }
+
+        let _num1 = 135, _height= 20;
+        ctx.fillStyle="#000000";
+        ctx.fillText('票据总笔数：',32,data.length*20+_num1); 
+        ctx.fillText('票据总笔数：',32,data.length*20+_num1 + _height);
+        ctx.fillText('保证金为承兑汇票金额：40%',67, data.length*20 +_num1 + _height * 2);
+        ctx.moveTo(0, data.length*20 +_num1 + _height * 2);
+        ctx.lineTo(canvas.width,data.length*20 +_num1 + _height * 2);
+        ctx.fillText('1、经出票人申请，本行审核同意承兑上述电子商业汇票',130, data.length*20 +_num1 + _height * 3);
+        ctx.fillText('2、经出票人申请，本行审核同意承兑上述电子商业汇票',130, data.length*20 +_num1 + _height * 4);
+        ctx.fillText('承兑银行账（章）', number + rectW * 6, data.length*20 +_num1 + _height * 5);
+        ctx.fillText('年月日', number + rectW * 6, data.length*20 +_num1 + _height * 6);
     }
 
     render() {
         return (
-            <div style={{height: '600px', width: '1000px', background: "url('../../../public/timg.jpg') no-repeat"}}>
+            <div style={{
+                minHeight: '600px', 
+                minWidth: '990px', 
+                background: "url('../../../public/timg.jpg') no-repeat",  
+                backgroundSize: "250px 150px",
+                backgroundPosition: "bottom right"
+            }}>
                 <canvas id="cavsElem"></canvas>
             </div>
         )
@@ -194,11 +213,16 @@ class PrintCanvas extends React.Component{
 
 const Print = () => {
     const componentRef = useRef();
-    console.log(componentRef, '-----------------componentRef------------')
+    // const outputSrc = () => {
+    //     var canvas = document.querySelector('#cavsElem');
+    //     var img = convertCanvasToImage(canvas);
+    //     console.log(img, '------img----')
+    // }
     return (
-        <div style={{width: '1000px', margin: '100px auto'}}>
+        <div style={{width: '990px', margin: '100px auto'}}>
             {/* <ComponentToPrint ref={componentRef} /> */}
             <PrintCanvas ref={componentRef} />
+            {/* <Button onClick={() => outputSrc()}>导出</Button> */}
             <ReactToPrint
                 trigger={() => <Button type="primary">打印</Button>}
                 content={() => componentRef.current}

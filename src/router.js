@@ -22,7 +22,7 @@ function RouterConfig({ history }) {
         <Route path="/video" exact component={Video} />
         <Route path="/hoc" exact component={Hoc} />
         <Route path="/ReactHooks" exact component={ReactHooks} />
-        <Route path="/ReactPrint" exact component={ReactPrint} />
+        <Route path="/reactPrint" exact component={ReactPrint} />
         <Route path="/CodeSegmentation" exact component={CodeSegmentation} />
         <Route path="/ReactContext" exact component={ReactContext} />
         <Route path="/auth" exact component={Auth} />

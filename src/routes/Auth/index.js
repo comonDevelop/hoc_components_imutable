@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Button } from 'antd';
 import config from "../../utils/config";
-import axios from 'axios';
+// import axios from 'axios';
 import request from '../../utils/request';
 
-export default class index extends Component {
+export default class Auth extends Component {
     componentDidMount() {
         let _code = window.location.search.split("?code=")[1];
         let {Client_ID, Client_Secret} = config;
