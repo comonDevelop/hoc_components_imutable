@@ -12,6 +12,7 @@ import Auth from './routes/Auth';
 import ChildrenComp from './routes/Hoc/ChildrenComp';
 import Es6 from './routes/Es6';
 import AntdForm from './routes/AntdForm';
+import FormComp from './routes/FormComp';
 
 function RouterConfig({ history }) {
   return (
@@ -29,6 +30,7 @@ function RouterConfig({ history }) {
         <Route path="/childrenComp" exact component={ChildrenComp} />
         <Route path="/es6" exact component={Es6} />
         <Route path="/antdForm" exact component={AntdForm} />
+        <Route path="/formComp" exact component={FormComp} />
       </Switch>
     </Router>
   );
