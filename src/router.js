@@ -13,6 +13,7 @@ import ChildrenComp from './routes/Hoc/ChildrenComp';
 import Es6 from './routes/Es6';
 import AntdForm from './routes/AntdForm';
 import FormComp from './routes/FormComp';
+import DomToImg from './routes/DomToImg';
 
 function RouterConfig({ history }) {
   return (
@@ -31,6 +32,7 @@ function RouterConfig({ history }) {
         <Route path="/es6" exact component={Es6} />
         <Route path="/antdForm" exact component={AntdForm} />
         <Route path="/formComp" exact component={FormComp} />
+        <Route path="/domToImg" exact component={DomToImg} />
       </Switch>
     </Router>
   );
