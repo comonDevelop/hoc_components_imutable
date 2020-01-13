@@ -18,7 +18,16 @@
 // 18. 常⻅Http请求头
 // 19. 移动端适配1px的问题
 // 20. 介绍flex布局
+
+
 // 21. 其他css⽅式设置垂直居中
+// 1、 line-height: 100px; height: 100px; font-size: 18px
+// 2、display: flex; fle
+
+
+
+
+
 // 22. 居中为什么要使⽤transform（为什么不使⽤marginLeft/Top）
 // 23. 使⽤过webpack⾥⾯哪些plugin和loader
 // 24. webpack⾥⾯的插件是怎么实现的
@@ -27,10 +36,14 @@
 
 // 27. 抽取公共⽂件是怎么配置的
 
-
 // 28. 项⽬中如何处理安全问题
-// xss：4中处理方式
+// xss：
+
 // csrf:
+
+
+
+
 
 // 29. 怎么实现this对象的深拷⻉
 function deepCopy(obj) {
