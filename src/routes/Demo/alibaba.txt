@@ -1,7 +1,45 @@
+/** 作者: ludan
+ *  时间: 2020-01-13 17:52:30
+ *  修改者:  ludan
+ *  最后修改人: 2020-01-13 17:52:30 
+ *  开发模块：nodeJS 使用过程，线程等等操作。 
+ *  说明： 
+ */
+
 // 1. 使⽤过的koa2中间件
+答：koa-compose 如果要将多个中间件合并成单一中间件,方便重用和导出，可以用koa-compose;
+    koa-bodyparser 可以把POST的参数解析到ctx.request.body中。如果熟悉Express的话会发现是一样的。
+    koa-router 我们可以直接使用get和post来定位并且减少代码量
+    koa-static和koa-view 它是用来加载静态资源 / 模板文件列入ejs
+
+
 // 2. koa-body原理
+答：
+
+
+
 // 3. 介绍⾃⼰写过的中间件
+答：
+const test = (ctx) => { 
+    console.log('-----------数据劫持------------')
+}
+
+modules.exports = function() { // 导出一个组价
+    return async function(ctx, next) {
+        test(ctx);
+        await next();
+    }
+}
+const koa = require('koa');
+const app = new koa();
+const test = require('./test.js');
+app.use(test());
+
+
+
 // 4. 有没有涉及到Cluster
+答：
+
 // 5. 介绍pm2
 // 6. master挂了的话pm2怎么处理
 // 7. 如何和MySQL进⾏通信
@@ -18,13 +56,9 @@
 // 18. 常⻅Http请求头
 // 19. 移动端适配1px的问题
 // 20. 介绍flex布局
-
-
 // 21. 其他css⽅式设置垂直居中
 // 1、 line-height: 100px; height: 100px; font-size: 18px
 // 2、display: flex; fle
-
-
 
 
 
