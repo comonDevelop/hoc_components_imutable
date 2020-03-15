@@ -14,6 +14,7 @@ import Es6 from './routes/Es6';
 import AntdForm from './routes/AntdForm';
 import FormComp from './routes/FormComp';
 import DomToImg from './routes/DomToImg';
+import HookDemo from './routes/HookDemo';
 
 function RouterConfig({ history }) {
   return (
@@ -33,6 +34,7 @@ function RouterConfig({ history }) {
         <Route path="/antdForm" exact component={AntdForm} />
         <Route path="/formComp" exact component={FormComp} />
         <Route path="/domToImg" exact component={DomToImg} />
+        <Route path="/hookDemo" exact component={HookDemo} />
       </Switch>
     </Router>
   );
