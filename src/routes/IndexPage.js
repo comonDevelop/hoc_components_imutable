@@ -4,7 +4,10 @@ import {Button, Menu, Icon} from 'antd';
 import BaseComponent from './BaseComponent';
 import config from "../utils/config";
 import { Link } from 'dva/router';
-
+// import jsxToJson from 'jsx-to-json/lib/jsx_to_json';
+const jsx2json = require('../jsx2json/index');
+const dom = require('ant-virtual-dom');
+console.log(dom, '--------dom------')
 const { SubMenu } = Menu;
 class TempCompoent extends BaseComponent {
   constructor(props){
@@ -32,7 +35,19 @@ class IndexPage extends BaseComponent {
     }
   }
   componentDidMount() {
-
+    var str = `
+      <Row style={{"border":"2px solid red","minHeight":"20px"}}  > 
+        123
+        {this.get()}
+        <Col span={6} style={{"minHeight":30,"background":"red"}}  >  
+        </Col>
+        <Col span={6} style={{"minHeight":30,"background":"red"}}  >  
+        </Col> 
+        321
+      </Row>
+    `
+    var _json = jsx2json(str)
+    console.log(_json, '-------_json-----')
   }
 
   handleClickMenu = (e) => {
