@@ -4,10 +4,7 @@ import {Button, Menu, Icon} from 'antd';
 import BaseComponent from './BaseComponent';
 import config from "../utils/config";
 import { Link } from 'dva/router';
-// import jsxToJson from 'jsx-to-json/lib/jsx_to_json';
-const jsx2json = require('../jsx2json/index');
-const dom = require('ant-virtual-dom');
-console.log(dom, '--------dom------')
+
 const { SubMenu } = Menu;
 class TempCompoent extends BaseComponent {
   constructor(props){
@@ -35,23 +32,10 @@ class IndexPage extends BaseComponent {
     }
   }
   componentDidMount() {
-    var str = `
-      <Row style={{"border":"2px solid red","minHeight":"20px"}}  > 
-        123
-        {this.get()}
-        <Col span={6} style={{"minHeight":30,"background":"red"}}  >  
-        </Col>
-        <Col span={6} style={{"minHeight":30,"background":"red"}}  >  
-        </Col> 
-        321
-      </Row>
-    `
-    var _json = jsx2json(str)
-    console.log(_json, '-------_json-----')
+   
   }
 
   handleClickMenu = (e) => {
-    console.log(e.target.content, '----e---')
     
   }
 
@@ -59,17 +43,15 @@ class IndexPage extends BaseComponent {
     console.log("渲染父组件 contents ")
     return (
       <div style={{textAlign:'center', marginTop: '60px'}}>
-        <Button type={this.state.btnType? 'primary':''} onClick={() => this.setState({btnType: !this.state.btnType})}>点击</Button>
+        {/* <Button type={this.state.btnType? 'primary':''} onClick={() => this.setState({btnType: !this.state.btnType})}>点击</Button>
         <p>{`这是btnType值${this.state.btnType}`}</p>
         <Button type="primary" onClick={() => this.setState({btnType: this.state.btnType})}>点击设置相同state值，页面是否会渲染</Button>
         <TempCompoent />
-        <br/><br/>
-        {/* 第三方认证 https://github.com/login/oauth/authorize */}
         <div>
           <a 
             href={`https://github.com/login/oauth/authorize?client_id=${config.Client_ID}&client_secret=${config.Client_Secret}&scope=user`}
           >第三方认证</a> 
-        </div>
+        </div> */}
         <div>
           <Menu
             defaultSelectedKeys={['1']}
