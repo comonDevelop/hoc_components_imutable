@@ -15,12 +15,13 @@ import AntdForm from './routes/AntdForm';
 import FormComp from './routes/FormComp';
 import DomToImg from './routes/DomToImg';
 import HookDemo from './routes/HookDemo';
+import FromComp from './routes/FromComp'
 
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" exact component={IndexPage} />
+        <Route path="/" exact component={FromComp} />
         <Route path="/hooks" exact component={Hooks} />
         <Route path="/video" exact component={Video} />
         <Route path="/hoc" exact component={Hoc} />
@@ -35,6 +36,7 @@ function RouterConfig({ history }) {
         <Route path="/formComp" exact component={FormComp} />
         <Route path="/domToImg" exact component={DomToImg} />
         <Route path="/hookDemo" exact component={HookDemo} />
+        <Route path="/FromComp" exact component={FromComp} />
       </Switch>
     </Router>
   );
