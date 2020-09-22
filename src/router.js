@@ -18,12 +18,12 @@ import HookDemo from './routes/HookDemo';
 import FromComp from './routes/FromComp';
 import ContentComp from './routes/ContentComp';
 import ProtalComp from './routes/ProtalComp';
-
+import RenderToString from './routes/RenderToString';
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" exact component={ProtalComp} />
+        <Route path="/" exact component={RenderToString} />
         <Route path="/hooks" exact component={Hooks} />
         <Route path="/video" exact component={Video} />
         <Route path="/hoc" exact component={Hoc} />
@@ -40,7 +40,8 @@ function RouterConfig({ history }) {
         <Route path="/hookDemo" exact component={HookDemo} />
         <Route path="/FromComp" exact component={FromComp} />
         <Route path="/ContentComp" exact component={ContentComp} />
-        <Route path="/ProtalComp" exact component={ProtalComp} /> 
+        <Route path="/ProtalComp" exact component={ProtalComp} />
+        <Route path="/RenderToString" exact component={RenderToString} />  
       </Switch>
     </Router>
   );
