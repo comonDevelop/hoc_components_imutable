@@ -43,7 +43,7 @@ class IndexPage extends BaseComponent {
     console.log("渲染父组件 contents ")
     return (
       <div style={{textAlign:'center', marginTop: '60px'}}>
-        {/* <Button type={this.state.btnType? 'primary':''} onClick={() => this.setState({btnType: !this.state.btnType})}>点击</Button>
+        <Button type={this.state.btnType? 'primary':''} onClick={() => this.setState({btnType: !this.state.btnType})}>点击</Button>
         <p>{`这是btnType值${this.state.btnType}`}</p>
         <Button type="primary" onClick={() => this.setState({btnType: this.state.btnType})}>点击设置相同state值，页面是否会渲染</Button>
         <TempCompoent />
@@ -51,7 +51,7 @@ class IndexPage extends BaseComponent {
           <a 
             href={`https://github.com/login/oauth/authorize?client_id=${config.Client_ID}&client_secret=${config.Client_Secret}&scope=user`}
           >第三方认证</a> 
-        </div> */}
+        </div>
         <div>
           <Menu
             defaultSelectedKeys={['1']}
