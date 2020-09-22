@@ -15,6 +15,17 @@ const ModalComp = () => {
 
 
 class ProtalComp extends React.Component {
+    componentWillMount(){}
+    componentWillUpdate(){}
+
+    getDerivedStateFromProps() {}
+    getSnapshotBeforeUpdate(){}
+    
+    componentDidMount() {}
+    componentWillReceiveProps(){}
+    shouldComponentUpdate(){}
+    componentDidUpdate(){}
+    componentWillUnmount(){}
     
     render() {
         return (
