@@ -20,12 +20,12 @@ import ContentComp from './routes/ContentComp';
 import ProtalComp from './routes/ProtalComp';
 import RenderToString from './routes/RenderToString';
 import UseMemo from './routes/useMemo';
-
+import UseReducer from './routes/UseReducer';
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" exact component={UseMemo} />
+        <Route path="/" exact component={UseReducer} />
         <Route path="/hooks" exact component={Hooks} />
         <Route path="/video" exact component={Video} />
         <Route path="/hoc" exact component={Hoc} />
@@ -45,6 +45,7 @@ function RouterConfig({ history }) {
         <Route path="/ProtalComp" exact component={ProtalComp} />
         <Route path="/RenderToString" exact component={RenderToString} />  
         <Route path="/UseMemo" exact component={UseMemo} />  
+        <Route path="/UseReducer" exact component={UseReducer} />  
       </Switch>
     </Router>
   );
